@@ -4,8 +4,10 @@ import (
     "fmt"
 )
 
-var i = 0
-var prev float64 = 0
+var (
+    i = 0
+    prev = 0.0
+)
 
 func Sqrt(x float64) float64 {
     z := float64(1)
@@ -13,9 +15,9 @@ func Sqrt(x float64) float64 {
 }
 
 func rec(x float64, z float64) float64 {
+    i++
     prev = z
     y := z - (z*z-x)/(2*z)
-    i++
     if prev == 1 || prev > y {
         return rec(x, y)
     }
