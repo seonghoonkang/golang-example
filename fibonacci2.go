@@ -5,8 +5,8 @@ import "fmt"
 func fibonacci() func() int {
     fn1, fn0 := 1, 0
     return func() int {
-        f := fn1 + fn0
-        fn1, fn0 = f,  fn1
+        f :=  fn0
+        fn1, fn0 = fn1 + fn0,  fn1
         return f
     }      
 }
