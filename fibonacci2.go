@@ -2,9 +2,9 @@ package main
 
 import "fmt"
 
-func fibonacci() func() int {
-    fn1, fn0 := 1, 0
-    return func() int {
+func fibonacci() func() (int64) {
+    var fn0 , fn1 int64 = 0, 1
+    return func() int64 {
         f :=  fn0
         fn1, fn0 = fn1 + fn0,  fn1
         return f
@@ -13,7 +13,7 @@ func fibonacci() func() int {
 
 func main() {
     f := fibonacci()
-    for i := 0; i < 10; i++ {
+    for i := 0; i < 50; i++ {
         fmt.Println(f())
     }
 }
